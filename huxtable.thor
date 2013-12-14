@@ -9,7 +9,7 @@ class Huxtable < Thor
 
   REPO_URI = "https://github.com/brightbit/huxtable.git"
 
-  desc "update", "fetch Semantic UI code from git"
+  desc "update", "fetch Huxtable code from git"
   method_option :branch, default: "master"
 
   def update
@@ -54,14 +54,14 @@ class Huxtable < Thor
       bower = JSON.parse( IO.read('package.json'), :quirks_mode => true)
       version = bower["version"]
 
-      version_file = source_root + "lib/huxtable/ui/rails/version.rb"
+      version_file = source_root + "lib/huxtable/rails/version.rb"
 
       gsub_file version_file, /(?<=VERSION = \")(.+)(?=\")/, version
     end
 
     def fix_paths
-      Dir.glob(source_root + "app" + "**/*.less") do |file|
-        gsub_file file, /(?<=url\()(.+\/\w+)(?=\/)/, 'semantic-ui'
+      Dir.glob(source_root + "app" + "**/*.sass") do |file|
+        gsub_file file, /(?<=url\()(.+\/\w+)(?=\/)/, 'huxtable'
         gsub_file file, /(?<= )(url)(?=\()/, 'asset-url'
         gsub_file file, /(?<=asset-url\()(.+)(?=\) |\);)/, '"\\1"'
       end
@@ -75,7 +75,7 @@ class Huxtable < Thor
       # STYLESHEETS
       stylesheets_path = "app/assets/stylesheets/huxtable/"
       FileUtils.mkdir_p source_root + stylesheets_path
-      run "rsync -avm --include='*.less' --include='*.css' -f 'hide,! */' #{git_root + 'src/'} #{source_root + stylesheets_path}"
+      run "rsync -avm --include='*.sass' --include='*.css' -f 'hide,! */' #{git_root + 'src/'} #{source_root + stylesheets_path}"
 
       # JAVASCRIPTS
       javascripts_path = "app/assets/javascripts/huxtable/"
@@ -110,7 +110,7 @@ class Huxtable < Thor
 
           relative_path = filepath.relative_path_from(javascripts_path)
 
-          template.write "//= require semantic-ui/#{relative_path} \n"
+          template.write "//= require huxtable/#{relative_path} \n"
         end
       end
 
@@ -131,12 +131,12 @@ class Huxtable < Thor
           file_list = Dir.glob(source_root + stylesheets + dir + "**/*")
 
           # transition should be last
-          file_to_end(file_list, /transition.less/)
+          file_to_end(file_list, /transition.sass/)
 
           file_list.each do |filepath|
             relative_path = Pathname.new(filepath).relative_path_from(stylesheets)
 
-            template.write "@import 'semantic-ui/#{relative_path}'; \n"
+            template.write "@import 'huxtable/#{relative_path}'; \n"
           end
 
           template.write "\n"

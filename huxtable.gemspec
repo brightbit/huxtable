@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'huxtable/ui/rails/version'
+require 'huxtable/rails/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "huxtable"
-  spec.version       = Huxtable::Ui::Rails::VERSION
+  spec.version       = Huxtable::Rails::VERSION
   spec.authors       = ["Brightbit"]
   spec.email         = ["hello@brightbit.com"]
-  spec.description   = %q{UI is the vocabulary of the web}
-  spec.summary       = %q{For Brightbit}
-  spec.homepage      = ""
+  spec.description   = %q{Brightbit's styleguide and front-end jetpack to get new projects started fast.}
+  spec.summary       = %q{Brightbit's styleguide}
+  spec.homepage      = "http://brightbit.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
