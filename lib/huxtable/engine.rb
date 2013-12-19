@@ -1,3 +1,4 @@
 module Huxtable
-  # Your code goes here...
+  class Engine < ::Rails::Engine
+  end
 end
