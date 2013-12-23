@@ -1,0 +1,19 @@
+.area-header
+  position: fixed
+  z-index: 100
+  top: 0
+  left: 0
+  right: 0
+  height: 50px
+  overflow: hidden
+  color: mix(white, #18a5cc)
+  font-size:  15px
+  line-height: 50px
+  background: #18a5cc
+  ul
+    @extend .list-inline
+    a
+      padding: 0 1em
+      color: mix(white, #18a5cc)
+      &:hover, &.active
+        color: white

@@ -1,0 +1,41 @@
+// Screen Sizes
+$break-small: 480px
+$break-medium: 768px
+$break-large: 1024px
+
+// Elements
+$radius: 5px
+$modal-width: 680px
+$modal-bg: $darkblue
+
+
+
+body
+  background: #fcfcfc
+  font-family: "Bit Sans", Avenir, Helvetica, sans-serif
+
+ul
+  margin: 0
+  padding: 0
+  &.list-simple
+    list-style: none
+  &.list-inline
+    @extend .list-simple
+    li
+      display: inline-block
+
+a
+  color: #18a5cc
+  text-decoration: none
+  &:hover
+    text-decoration: none
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right
+
+#content
+  margin-left: 300px
+  padding: 0 20px
