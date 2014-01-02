@@ -11,7 +11,7 @@ $modal-bg: $darkblue
 
 
 body
-  background: #fcfcfc
+  background: $body-bg
   font-family: "Bit Sans", Avenir, Helvetica, sans-serif
 
 ul
@@ -25,9 +25,10 @@ ul
       display: inline-block
 
 a
-  color: #18a5cc
+  color: $link-color
   text-decoration: none
   &:hover
+    color: $link-hover
     text-decoration: none
 
 .pull-left
@@ -37,5 +38,4 @@ a
   float: right
 
 #content
-  margin-left: 300px
   padding: 0 20px
