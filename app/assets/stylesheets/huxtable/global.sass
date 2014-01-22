@@ -1,0 +1,26 @@
+body
+  background: $body-bg
+  font-family: "Bit Sans", Avenir, Helvetica, sans-serif
+
+ul
+  margin: 0
+  padding: 0
+  &.list-simple
+    list-style: none
+  &.list-inline
+    @extend .list-simple
+    li
+      display: inline-block
+
+a
+  color: $link-color
+  text-decoration: none
+  &:hover
+    color: $link-hover
+    text-decoration: none
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right
