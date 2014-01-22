@@ -6,19 +6,17 @@
   left: 0
   right: 0
   height: 50px
-  overflow: hidden
-  color: mix(white, #18a5cc)
   font-size:  15px
   line-height: 50px
-  background: #18a5cc
-  ul
+  background: #333
+  color: #555
+  > ul
     @extend .list-inline
     a
       padding: 0 1em
-      color: mix(white, #18a5cc)
+      color: #555
       &:hover, &.active
         color: white
 
 body.has-header
-  #content
-    margin-top: 50px
+  padding-top: 50px

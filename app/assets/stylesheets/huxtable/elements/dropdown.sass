@@ -1,4 +1,19 @@
+$dropdown-link-color: $link-color !default
 $caret-width-base: 4px !default
 $zindex-dropdown: 1000 !default
-$dropdown-bg: $darkblue !default
-$dropdown-divider-bg: lighten($darkblue, 5%) !default
+$dropdown-bg: $charcoal !default
+$dropdown-divider-bg: lighten($dropdown-bg, 5%) !default
+
+.dropdown-menu
+  &:before
+    content: ""
+    position: absolute
+    top: -7px
+    left: 9px
+    display: inline-block
+    border: 7px solid transparent
+    border-bottom-color: $dropdown-bg
+  &.pull-:before
+    left: auto
+    right: 9px
+
