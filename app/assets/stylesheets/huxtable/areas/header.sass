@@ -8,15 +8,18 @@
   height: 50px
   font-size:  15px
   line-height: 50px
-  background: #333
-  color: #555
-  > ul
+  background: $header-bg
+  color: $header-text-color
+  nav > ul
     @extend .list-inline
+    margin-bottom: 0
+    li
+      float: none
     a
       padding: 0 1em
-      color: #555
+      color: $header-text-color
       &:hover, &.active
-        color: white
+        color: $header-active-color
 
 body.has-header
   padding-top: 50px
