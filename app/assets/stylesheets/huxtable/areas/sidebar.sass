@@ -11,6 +11,8 @@
 
   a
     color: #555
+    &:hover, &.active
+      color: white
 
   nav
     ul
@@ -22,11 +24,6 @@
 
         a
           padding: 0 10px
-          opacity: 0.25
-
-        &.active, &:hover
-          a
-            opacity: 1
 
   .nav-tabs
     padding-bottom: 0
@@ -41,7 +38,6 @@
         border: none
         margin: 0
         text-align: center
-        color: mix(white, #2e3438, 25%)
         &:hover, &:focus
           background: none
       &.active
