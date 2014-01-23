@@ -6,11 +6,11 @@
   left: 0
   width: 300px
   font-size:  15px
-  color: mix(white, #2e3438, 25%)
+  color: #555
   background: #2e3438
 
   a
-    color: white
+    color: #555
 
   nav
     ul
@@ -19,12 +19,14 @@
 
       li
         line-height: 2.5em
-        opacity: 0.25
-        &.active, &:hover
-          opacity: 1
 
         a
           padding: 0 10px
+          opacity: 0.25
+
+        &.active, &:hover
+          a
+            opacity: 1
 
   .nav-tabs
     padding-bottom: 0
