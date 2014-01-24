@@ -3,10 +3,14 @@
 
 .dropdown-menu
   margin-top: 10px
+
   li
     display: block !important
+
     a
       padding: 0.5em 1em !important
+      color: #555
+
   &:before
     content: ""
     position: absolute
@@ -15,6 +19,7 @@
     display: inline-block
     border: 7px solid transparent
     border-bottom-color: $dropdown-bg
+
   &.pull-right:before
     left: auto
     right: 9px
