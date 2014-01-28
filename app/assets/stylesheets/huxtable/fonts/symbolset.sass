@@ -1,14 +1,13 @@
 @charset "UTF-8"
 
-+font-face("SSStandard", "ss-standard")
-+font-face("SSSocial", "ss-social")
-+font-face("SSSocial", "ss-symbolicons-block")
++font-face("SSStandard", "/assets/ss-standard")
++font-face("SSSocial", "/assets/ss-social")
++font-face("SSSymbolicons", "/assets/ss-symbolicons-block")
 
 html:hover [class^="ss-"]
   -ms-zoom: 1
 
-.ss-icon, [class^="ss-"], [class*=" ss-"]
-  &:before, &.right:after
+.ss-icon, [class^="ss-"]:before, [class^="ss-"].right:after, [class*=" ss-"]:before, [class*=" ss-"].right:after
   font-family: "SSStandard"
   font-style: normal
   font-weight: normal
@@ -197,7 +196,25 @@ html:hover [class^="ss-"]
   content: '⏩'
 .ss-skipback:before, .ss-skipback.right:after
   content: '⏮'
-.ss-skipforward:before, .ss-skipf, .ss-grid.right:after
+.ss-skipforward:before, .ss-skiporward.right:after
+  content: '⏭'
+.ss-eject:before, .ss-eject.right:after
+  content: '⏏'
+.ss-repeat:before, .ss-repeat.right:after
+  content: '🔁'
+.ss-replay:before, .ss-replay.right:after
+  content: '↺'
+.ss-shuffle:before, .ss-shuffle.right:after
+  content: '🔀'
+.ss-book:before, .ss-book.right:after
+  content: '📕'
+.ss-openbook:before, .ss-openbook.right:after
+  content: '📖'
+.ss-notebook:before, .ss-notebook.right:after
+  content: '📓'
+.ss-newspaper:before, .ss-newspaper.right:after
+  content: '📰'
+.ss-grid:before, .ss-grid.right:after
   content: ''
 .ss-rows:before, .ss-rows.right:after
   content: ''
@@ -389,8 +406,7 @@ html:hover [class^="ss-"]
 
 
 // Symbolset Social
-.ss-social-icon, [class^="ss-social-"], [class*=" ss-social-"]
-  &:before, &.right:after
+.ss-icon.ss-social, [class^="ss-social-"]:before, [class^="ss-social-"].right:after, [class*=" ss-social-"]:before, [class*=" ss-social-"].right:after
   font-family: "SSSocial"
 .ss-social-facebook:before, .ss-social-facebook.right:after
   content: ''
@@ -458,8 +474,7 @@ html:hover [class^="ss-"]
 
 
 // Symbolset Symbolicons Block
-.ss-block-icon, [class^="ss-block-"], [class*=" ss-block-"]
-  &:before, &.right:after
+.ss-icon.ss-symbolicons, [class^="ss-symbolicons-"]:before, [class^="ss-symbolicons-"].right:after, [class*=" ss-symbolicons-"]:before, [class*=" ss-symbolicons-"].right:after
   font-family: "SSSymbolicons"
 .ss-block-crosshair:before, .ss-block-crosshair.right:after
   content: '⌖'
