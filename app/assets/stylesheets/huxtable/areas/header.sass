@@ -1,5 +1,5 @@
 .area-header
-  @extend .nav-bar
+  @extend .nav-bar !optional
   position: fixed
   z-index: 100
   top: 0
@@ -21,5 +21,5 @@
       &:hover, &.active
         color: $header-active-color
 
-body.has-header
+.has-header
   padding-top: 50px
